@@ -6,7 +6,6 @@ export const useFetchGifs = (category) => {
   
     const [images, setImages] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    //isLoading with useState
 
     const getImages = async () => {
         const newImages = await getGifs(category);
@@ -17,6 +16,7 @@ export const useFetchGifs = (category) => {
     useEffect(() => {
         getImages();
     }, [])
+
     return {
         images,
         isLoading

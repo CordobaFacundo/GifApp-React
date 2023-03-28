@@ -2,6 +2,8 @@
 import { React, useState } from 'react'
 import { useFetchGifs } from '../hooks/useFetchGifs';
 import { GifItem } from './GifItem';
+import { Loading } from './Loading';
+
 
 export const GifGrid = ({ category }) => {
 
@@ -10,6 +12,10 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h3>{category}</h3>
+          
+            {
+                isLoading && (<Loading />)
+            }
             <div className="card-grid">
                 {
                     images.map((image) => (
